@@ -1,0 +1,60 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    background: rgb(137, 137, 137);
+}
+
+h1{
+    color: salmon;
+}
+
+input {
+    width: 300px;
+    text-align: center;
+    padding: 10px;
+    font-style: 1rem;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.meals-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.meal-card{
+    /* Avec un flex: 1 0 20%, les cartes se placent correctement 
+    si et seulement si le parent .meals-container 
+    est en display: flex; et flex-wrap : wrap */
+    flex: 1 0 20% ;
+    
+/* Pour que les cartes s'écartent l'une de l'autre on joue sur le min-width */
+    min-width: 180px;
+/* Pour que la tof ne soit pas trop grande si seule, on joue sur le max-width:   */
+    max-width: 280px;
+    border: 2px solid salmon;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+img{
+    width: 90%;
+    border-radius: 20px;
+}
+
+p{
+    /* Pour harmoniser le textes et le nombre de lignes, on utilise le code css line-clamp  */
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}

@@ -1,0 +1,69 @@
+# React Process pour la création d'une single page 
+# et appel d'API
+
+# Dans terminal VsCode vide :
+# npx create-react-app 'nom-app' 
+# puis cd nom-app 
+# puis code . pour ouvrir Vs Code sur l'app créée
+
+# puis dans 'src', effacer les fichiers inutiles :
+# index.css
+# logo.svg
+# reportWebvitals
+# App.test.js
+# setup.Test.js
+
+# Effacer dans  index.js
+
+# commentaire reportWebvitals() 
+# import reportWebvitals
+# import index.css
+
+# effacer tout dans App.css
+# le changer en index.css
+
+# #effacer tout dans App.js 
+# puis taper rsc (react stateless componenent)
+# coder le rendu ( dans return) comme si c'était du html
+
+# #npm run start
+
+# #dans App.js
+
+# privilégier axios à  fetch
+
+# installer en local axios : npm i axios
+# installer axios en global au cas où : npm i -g axios
+
+# import axios from "axios" 
+# On place notre appel d'API dans une fonction useEffect au dessus du 'return'
+# dès qu'on "monte" le composant App.js, on va chercher l'API avec axios.get("API_URL").then((res) => console.log(res))
+# pour un 1er contrôle on utilise console.log(res) 
+# installer 'react developper tools' pour contrôler dans l'inspection d'éléments
+
+# Grâce à axios, on va chercher les données de l'API puis on les stocke dans une variable ( un useState) comme ceci :
+# const [variable, setVariable] = useState([])
+
+# useEffect(() => {
+# 	axios.get("API_URL").then((res) => setVariable(res))
+# }, []) 
+# Ne pas oublier le callback [] sur le useEffect pour éviter qu'il se lance non-stop
+# comme on a besoin que le callback soit relancé à chaque recherche on lui ajoute [inputSearch]
+
+# Dans le return, on code la partie html du composant en créant un app-container puis un meals-container qui listera chaque carte grâce à map()
+# -----
+# dans components créer le composant Card.js, chaque card représentant une recette  
+# donc Card.js est un composant du composant App.js.
+# Card.js hérite des données de App.js
+# Card.js étant une props de App.js 
+# après avoir tapé rsc, déstructurer meals comme ce qui suit :
+#   const Card = ({ meal }) => {return ( div className = "meal-card" ...
+#   )}
+# coder la suite de la logique html d'une carte  dans le return
+
+# puis dans App.js à la partie meals-container , mapper chaque Card en important le composant Card, sans oublier la clé unique 
+
+
+
+# faire toute la partie technique react + JS 
+# finir par le style ( css)
